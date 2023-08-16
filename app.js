@@ -61,6 +61,15 @@ entradaDados.question('Digite o nome do aluno: ', function(nomeAluno){
                     
                             let media = (Number(nota1)+Number(nota2)+Number(nota3)+Number(nota4))/4
 
+                            let situacao
+                            if(media <5){
+                                situacao = 'Reprovado'
+                            } else if (media >= 5 && media < 7){
+                                situacao = 'Exame'
+                            } else if (media >= 7){
+                                situacao = 'Aprovado'
+                            }
+
                             console.log('')
                             console.log('+-----------------')
                             console.log(`| BOLETIM `)
@@ -75,12 +84,13 @@ entradaDados.question('Digite o nome do aluno: ', function(nomeAluno){
                             console.log(`| Nota 3: ${String(nota3).replace('.',',')} `)
                             console.log(`| Nota 4: ${String(nota4).replace('.',',')} `)
                             console.log(`| Media: ${String(media.toFixed(1)).replace('.',',')} `)
+                            console.log(`| Situação: ${situacao}`)
                             console.log('+-----------------')
                             entradaDados.close()
                             }
 
                         })
-                        })
+                        })    
                     })
                 })
             })
